@@ -1,6 +1,7 @@
 package kr.study.spring.controller;
 
 import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,12 @@ public class HomeController {
 	
 	Command command = null;
 	BCommand bcommand = null;
+	
+	//URL 초기 화면 /login으로 바로 이동
+	@RequestMapping("/")
+	public String root() {
+	    return "redirect:login";
+	}
 	
 	//회원가입 페이지
 	@RequestMapping("/join")
